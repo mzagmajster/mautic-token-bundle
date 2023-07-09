@@ -1,13 +1,13 @@
-# Mautic Plugin Boilerplate
+# Mautic Token Bundle
 
-Empty Mautic plugin bundle (zero functionality). Tested on **Mautic 3.3.3**. Go ahead use this boilerplate and provide more custom functionality to Mautic - Open source Marketing Automation Tool.
+Add ```{ibanmasked}``` token to Mautic that shows only last three digits of iban 
 
 ## Getting Started
 
 ### Prerequisites
 
-* Composer 1
-* Mautic 3
+* Composer 2
+* Mautic 4
 
 
 ### Installing
@@ -24,7 +24,7 @@ Use hooks from .githooks folder on project by executing:
 cd <mautic-root-folder>
 rm -rf var/cache/dev/* var/cache/prod/*
 cd plugins
-git clone <repo-url> MauticHelloWorldBundle
+git clone <repo-url> MZagmajsterTokenBundle
 cd <mautic-root-folder>
 composer install  # You only need this druing development.
 php bin/console mautic:plugins:install --dev  # You should get a message saying one or more plugins have been installed in terminal.
@@ -38,7 +38,7 @@ Typical **update** of plugin source code described below.
 ```
 cd <mautic-root-folder>
 rm -rf var/cache/dev/* var/cache/prod/*
-cd plugins/MauticHelloWorldBundle
+cd plugins/MZagmajsterTokenBundle
 git pull origin <branch>
 php bin/console mautic:plugins:reload --dev  # You should get a message saying one or more plugins have been installed in terminal.
 ```
@@ -49,18 +49,16 @@ php bin/console mautic:plugins:reload --dev  # You should get a message saying o
 
 ### Coding style
 
-Please refer to PHP CS file for details on coding styles.
-
-From plugin root folder you can also run the following commands during development.
-
-* ```composer lint``` - Checks the PHP syntax.
-* ```composer checkcs``` - Checks code formatting && show what should be fixed (does not touch source files).
-* ```composer fixcs``` - Fixes code formatting (updates soruce files).
+Project is using configuration from Mautic core.
 
 ## Deployment
 
 * You do not have to install any composer packages inside plugin folder since we only use it during development.
 * When you are deploying the plugin make sure you call ```php bin/console``` command without --dev switch.
+
+* Add custom field iban
+* Upload and activate the plugin
+* Create an email and use ```{ibanmasked}``` token in email. It should only show last three digits.
 
 ## Changelog
 
