@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 return [
-    'name'        => 'Hello World',
+    'name'        => 'MZagmajsterTokenBundle',
     'description' => 'Mautic Plugin Boilerplate <br /> <a href="https://maticzagmajster.ddns.net/">Website</a>',
     'version'     => '0.0.0',
     'author'      => 'Matic Zagmajster',
@@ -16,6 +16,10 @@ return [
 
     'services'    => [
         'events' => [
+            'mautic.mztb.subscriber.email' => [
+                'class'     => MauticPlugin\MZagmajsterTokenBundle\EventListener\EmailSubscriber::class,
+                'arguments' => [],
+            ],
         ],  // end services.events
 
         'models' => [
