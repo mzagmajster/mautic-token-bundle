@@ -1,0 +1,16 @@
+{
+    "name": "mzagmajster/mautic-token-bundle",
+    "description": "Add custom token to Mautic",
+    "type": "mautic-plugin",
+    "license": "GNU GENERAL PUBLIC LICENSE Version 3",
+    "authors": [
+        {
+            "name": "Matic Zagmajster"
+        }
+    ],
+    "scripts": {
+        "cs": "../../bin/php-cs-fixer fix --config=../../.php-cs-fixer.php -v --dry-run --diff",
+        "fixcs": "../../bin/php-cs-fixer fix --config=../../.php-cs-fixer.php --using-cache=no -v"
+    },
+    "require": {}
+}
